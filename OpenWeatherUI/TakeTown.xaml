@@ -1,0 +1,55 @@
+﻿<Window x:Class="OpenWeatherUI.TakeTown"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenWeatherUI"
+        mc:Ignorable="d"
+        Height="470" Width="330" ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        MouseDown="Window_MouseDown"
+        WindowStartupLocation="CenterScreen">
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,330,470" RadiusX="30" RadiusY="30"/>
+    </Window.Clip>
+    <Grid Background="#19191E">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#E9BC3E" RadiusX="5" Grid.Row="1" 
+                   RadiusY="5" Width="270" Height="50"/>
+        <TextBlock HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   Grid.Row="1" Text="Введите название местности" 
+                   FontFamily="Calibri Bold" FontSize="20"/>
+        <TextBox Grid.Row="2" Height="30"
+                 FontSize="20" Width="200" FontFamily="Arial" 
+                 TextAlignment="Center" Text="Томск"/>
+        <Button x:Name="TakeLocation" Grid.Row="3" Height="50" Width="250" Content="Начать"
+                FontSize="40" Background="#E9BC3E"
+                FontFamily="Calibri Bold">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="CloseWindow" Width="18" Height="18" Click="CloseTab_Click" Grid.Row="0" HorizontalAlignment="Right" 
+                Margin="0,0,15,0" Background="#D43723" Opacity="0.85" BorderThickness="0">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="90"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+
+</Window>
